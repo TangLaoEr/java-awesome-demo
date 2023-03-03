@@ -1,2 +1,4 @@
 # Project exclude paths
-/privoder/target/
+.idea
+target
+*.iml
