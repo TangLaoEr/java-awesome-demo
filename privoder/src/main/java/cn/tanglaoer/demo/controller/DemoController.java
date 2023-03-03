@@ -1,5 +1,6 @@
 package cn.tanglaoer.demo.controller;
 
+import cn.hutool.core.util.RandomUtil;
 import cn.tanglaoer.demo.entity.User;
 import cn.tanglaoer.demo.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
@@ -23,5 +24,10 @@ public class DemoController {
         User user = userService.getById(id);
         System.out.println(user);
         return user.toString();
+    }
+
+    @GetMapping("/random")
+    public String getRandom() {
+        return RandomUtil.randomString(8);
     }
 }
