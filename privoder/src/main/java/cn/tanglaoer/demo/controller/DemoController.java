@@ -30,4 +30,14 @@ public class DemoController {
     public String getRandom() {
         return RandomUtil.randomString(8);
     }
+
+    @GetMapping("/send/message")
+    public String sendMessage() {
+        return userService.sendMessage();
+    }
+
+    @GetMapping("/send/message/tag")
+    public String sendMessageTag() {
+        return userService.sendMessageTag();
+    }
 }

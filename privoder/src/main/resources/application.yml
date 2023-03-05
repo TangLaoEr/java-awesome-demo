@@ -35,3 +35,10 @@ management:
 jms:
   nameserver: localhost:9876
   topic: demo_producer_group
+
+# rocketmq 配置
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    group: ddddd
+    send-message-timeout: 30000

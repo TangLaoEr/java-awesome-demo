@@ -8,4 +8,8 @@ import cn.tanglaoer.demo.entity.User;
  */
 public interface IUserService {
     User getById(Integer id);
+
+    String sendMessage();
+
+    String sendMessageTag();
 }

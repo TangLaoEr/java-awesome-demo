@@ -1,13 +1,14 @@
 package cn.tanglaoer.demo;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author： tks
@@ -25,5 +26,15 @@ public class Application {
 
         Map<String, Object> beansWithAnnotation = context.getBeansWithAnnotation(RestController.class);
         System.out.println(beansWithAnnotation.size());
+
+        System.out.println("=========");
+
+        Map<String, Object> annotationMap =
+                context.getBeansWithAnnotation(EnableAutoConfiguration.class);
+        Set<String> keys = annotationMap.keySet();
+        for (String key : keys) {
+            annotationMap.get(key);
+        }
+
     }
 }
