@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: provider
+    name: privoder9001
   cloud:
     nacos:
       discovery:

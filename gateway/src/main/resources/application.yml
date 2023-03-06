@@ -1,0 +1,19 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        secret-key: VGhpc0lzTXlDdXN0b21TZWNyZXRLZXkwMTIzNDU2Nzg=
+        username: nacos
+        password: nacos
+    # 网关
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true

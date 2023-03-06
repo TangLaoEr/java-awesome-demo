@@ -16,9 +16,9 @@ import java.util.Set;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class Application {
+public class Application9001 {
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(Application9001.class, args);
         String[] beanNames = context.getBeanDefinitionNames();
         for (String beanName : beanNames) {
             System.out.println(beanName);
