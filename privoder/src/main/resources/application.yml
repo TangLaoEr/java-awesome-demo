@@ -1,10 +1,10 @@
 server:
-  port: 9001
+  port: 9002
 
 
 spring:
   application:
-    name: privoder9001
+    name: privoder9002
   cloud:
     nacos:
       discovery:

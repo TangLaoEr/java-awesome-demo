@@ -22,6 +22,12 @@
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
 
+        <!--一定要引入这个、不然网关报503-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+
         <!--nacos是2.1.1当前稳定版-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
