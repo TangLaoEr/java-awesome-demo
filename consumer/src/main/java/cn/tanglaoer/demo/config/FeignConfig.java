@@ -8,6 +8,7 @@ import org.springframework.web.reactive.function.client.support.WebClientAdapter
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 
 /**
+ * Http Interface 方式调用
  * @author： tks
  * @date： 2023/3/6
  */

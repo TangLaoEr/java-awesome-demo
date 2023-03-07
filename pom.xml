@@ -27,6 +27,7 @@
         <lombok.version>1.18.8</lombok.version>
         <hutool.version>5.8.12</hutool.version>
         <rocketmq-spring-boot.version>2.2.2</rocketmq-spring-boot.version>
+        <knife4j.version>4.0.0</knife4j.version>
     </properties>
 
 
