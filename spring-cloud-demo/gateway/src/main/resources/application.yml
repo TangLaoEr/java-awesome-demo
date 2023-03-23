@@ -23,16 +23,12 @@ spring:
 
 knife4j:
   gateway:
-    enable: true
-    routes:
-      - name: consumer
-        url: /consumer10003/v3/api-docs?group=default
-        service-name: user-service
-        order: 2
-      - name: provider
-        url: /privoder9002/v3/api-docs?group=default
-        service-name: order-service
-        order: 3
+    enabled: true
+    strategy: discover
+    discover:
+      enabled: true
+      version: openapi3
+      excluded-services: ${spring.application.name}
 
 
 
