@@ -1,0 +1,40 @@
+server:
+  port: 9005
+
+spring:
+  cloud:
+    config:
+      allow-override: true
+      override-none: true
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+      datasource:
+        ds1:
+          nacos:
+            server-addr: ${spring.cloud.nacos.config.server-addr}
+            data-id: ${spring.application.name}-flow-rules
+            group-id: SENTINEL_GROUP
+            data-type: json
+            rule-type: flow
+            secret-key: ${spring.cloud.nacos.discovery.secret-key}
+            username: ${spring.cloud.nacos.discovery.username}
+            password: ${spring.cloud.nacos.discovery.password}
+  datasource: # 当前数据源操作类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:33061/demo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+
+mybatis-plus:
+  mapper-locations: classpath:cn.tanglaoer/**/xml/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

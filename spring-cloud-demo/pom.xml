@@ -16,6 +16,7 @@
         <module>gateway</module>
         <module>rocketmq-demo</module>
         <module>rocketmq-client-demo</module>
+        <module>sentinel-dashboard-push-demo</module>
     </modules>
 
     <artifactId>spring-cloud-demo</artifactId>
@@ -32,7 +33,7 @@
         <spring-cloud.version>2022.0.0</spring-cloud.version>
         <spring-cloud-alibaba.version>2022.0.0.0-RC1
         </spring-cloud-alibaba.version>
-        <lombok.version>1.18.8</lombok.version>
+        <lombok.version>1.18.20</lombok.version>
         <hutool.version>5.8.12</hutool.version>
         <rocketmq-spring-boot.version>2.2.2</rocketmq-spring-boot.version>
         <knife4j.version>4.0.0</knife4j.version>
@@ -80,7 +81,6 @@
                 <version>${hutool.version}</version>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-spring-boot-starter -->
             <dependency>
                 <groupId>org.apache.rocketmq</groupId>
                 <artifactId>rocketmq-spring-boot-starter</artifactId>

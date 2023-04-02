@@ -1,0 +1,218 @@
+global:
+  scrape_interval: 15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+  - job_name: "minio-job"
+    bearer_token: eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjQ3OTkwMjUzOTYsImlzcyI6InByb21ldGhldXMiLCJzdWIiOiJteW1pbmlvYWRtaW4ifQ.G8GMM6uUrrGHKxk9y8WgrgOFrSMnswQpRsiaXPYhePrh05H7nJJMc2swsVDiSSu0VUEYtWqApSsPZZT7HdkpoQ
+    metrics_path: /minio/v2/metrics/cluster
+    static_configs:
+      - targets: ["10.201.66.4:9000"]
+  - job_name: "server"
+    static_configs:
+      - targets: ["10.201.66.1:19100"]
+        labels:
+          server: 10.201.66.1
+      - targets: ["10.201.66.2:19100"]
+        labels:
+          server: 10.201.66.2
+      - targets: ["10.201.66.3:19100"]
+        labels:
+          server: 10.201.66.3
+      - targets: ["10.201.66.4:19100"]
+        labels:
+          server: 10.201.66.4
+      - targets: ["10.201.66.5:19100"]
+        labels:
+          server: 10.201.66.5
+      - targets: ["10.201.66.6:19100"]
+        labels:
+          server: 10.201.66.6
+      - targets: ["10.201.66.7:19100"]
+        labels:
+          server: 10.201.66.7
+      - targets: ["10.201.66.8:19100"]
+        labels:
+          server: 10.201.66.8
+      - targets: ["10.201.66.9:19100"]
+        labels:
+          server: 10.201.66.9
+  - job_name: "nginx"
+    metrics_path: "/metrics"
+    static_configs:
+      - targets: ["10.201.66.1:9113"]
+  - job_name: "nacos-actuator"
+    metrics_path: "/nacos/actuator/prometheus"
+    static_configs:
+      - targets: ["10.201.66.1:8848"]
+        labels:
+          application: nacos
+          node: 10.201.66.1:8848
+  - job_name: "actuator"
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ["10.201.66.1:18001"]
+        labels:
+          application: authentication-server
+          node: 10.201.66.1:8001
+
+      - targets: ["10.201.66.3:17070"]
+        labels:
+          application: base-server
+          node: 10.201.66.3:7070
+
+      - targets: ["10.201.66.5:18050"]
+        labels:
+          application: blade-visual
+          node: 10.201.66.5:8050
+
+      - targets: ["10.201.66.4:17080"]
+        labels:
+          application: concrete-management
+          node: 10.201.66.4:7080
+
+      - targets: ["10.201.66.4:17081"]
+        labels:
+          application: concrete-external
+          node: 10.201.66.4:7081
+
+      - targets: ["10.201.66.3:17082"]
+        labels:
+          application: concrete-external
+          node: 10.201.66.3:7082
+
+      - targets: ["10.201.66.4:16000"]
+        labels:
+          application: concrete-warehousing
+          node: 10.201.66.4:6000
+
+      - targets: ["10.201.66.2:15556"]
+        labels:
+          application: qdm-server
+          node: 10.201.66.2:5556
+
+      - targets: ["10.201.66.2:15555"]
+        labels:
+          application: qdm-server-job
+          node: 10.201.66.2:5555
+
+      - targets: ["10.201.66.2:15557"]
+        labels:
+          application: qdm-external-testing
+          node: 10.201.66.2:5557
+
+      - targets: ["10.201.66.3:15570"]
+        labels:
+          application: qdm-external-testing
+          node: 10.201.66.3:5570
+
+      - targets: ["10.201.66.3:15558"]
+        labels:
+          application: qdm-external-qdata
+          node: 10.201.66.3:5558
+
+      - targets: ["10.201.66.3:15560"]
+        labels:
+          application: qdm-server
+          node: 10.201.66.3:5560
+
+      - targets: ["10.201.66.2:15580"]
+        labels:
+          application: qdm-external-qdata
+          node: 10.201.66.2:5580
+
+      - targets: ["10.201.66.2:15559"]
+        labels:
+          application: qdm-external-province
+          node: 10.201.66.2:5559
+
+      - targets: ["10.201.66.5:17090"]
+        labels:
+          application: warn-config
+          node: 10.201.66.5:7090
+
+      - targets: ["10.201.66.1:16065"]
+        labels:
+          application: external-gateway
+          node: 10.201.66.1:6065
+
+      - targets: ["10.201.66.1:16066"]
+        labels:
+          application: external-gateway
+          node: 10.201.66.1:6066
+
+      - targets: ["10.201.66.4:16067"]
+        labels:
+          application: external-gateway
+          node: 10.201.66.4:6067
+
+      - targets: ["10.201.66.5:18003"]
+        labels:
+          application: project-management
+          node: 10.201.66.5:8003
+
+      - targets: ["10.201.66.2:15556"]
+        labels:
+          application: qdm-server
+          node: 10.201.66.2:5556
+
+      - targets: ["10.201.66.1:16061"]
+        labels:
+          application: zuul
+          node: 10.201.66.1:6061
+
+      - targets: ["10.201.66.1:16062"]
+        labels:
+          application: zuul
+          node: 10.201.66.1:6062
+
+      - targets: ["10.201.66.4:16063"]
+        labels:
+          application: zuul
+          node: 10.201.66.4:6063
+
+      - targets: ["10.201.66.5:18009"]
+        labels:
+          application: xxl-job-admin
+          node: 10.201.66.5:8009
+
+      - targets: ["10.201.66.5:17082"]
+        labels:
+          application: wps-service
+          node: 10.201.66.5:7082
+
+  - job_name: "tcp_port_status"
+    metrics_path: /probe
+    params:
+      module: [tcp_connect]
+    static_configs:
+      - targets: ["10.201.66.3:6379"]
+        labels:
+          app: "Redis"
+          node: 10.201.66.3:6379
+      - targets: ["10.201.66.4:9000"]
+        labels:
+          app: "MinIO"
+          node: 10.201.66.4:9000
+      - targets: ["10.201.66.7:5236"]
+        labels:
+          app: "Database"
+          node: 10.201.66.7:5236
+      - targets: ["10.201.66.8:5236"]
+        labels:
+          app: "Database"
+          node: 10.201.66.8:5236
+      - targets: ["10.201.66.9:5236"]
+        labels:
+          app: "Database"
+          node: 10.201.66.9:5236
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 127.0.0.1:9115

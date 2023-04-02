@@ -1,0 +1,15 @@
+server:
+  port: 9002
+
+
+spring:
+  application:
+    name: privoder9002
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        secret-key: VGhpc0lzTXlDdXN0b21TZWNyZXRLZXkwMTIzNDU2Nzg=
+        username: nacos
+        password: nacos
+        network-interface:

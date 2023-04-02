@@ -1,9 +1,7 @@
 package cn.tanglaoer.demo.consumer;
 
-import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;
-import org.apache.rocketmq.spring.core.RocketMQPushConsumerLifecycleListener;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -17,7 +15,7 @@ import java.util.Date;
         consumerGroup = "ddddd",
         selectorExpression = "hello"
 )
-public class DefaultConsumer implements RocketMQListener<String>, RocketMQPushConsumerLifecycleListener {
+public class DefaultConsumer implements RocketMQListener<String> /*,RocketMQPushConsumerLifecycleListener*/ {
     @Override
     public void onMessage(String s) {
         System.out.println(new Date());
@@ -25,8 +23,9 @@ public class DefaultConsumer implements RocketMQListener<String>, RocketMQPushCo
         System.out.println(s);
     }
 
-    @Override
-    public void prepareStart(DefaultMQPushConsumer defaultMQPushConsumer) {
-        defaultMQPushConsumer.setConsumeThreadMax(10);
-    }
+    // consumeThreadMin (20) is larger than consumeThreadMax (10)
+    // @Override
+    // public void prepareStart(DefaultMQPushConsumer defaultMQPushConsumer) {
+    //     defaultMQPushConsumer.setConsumeThreadMax(10);
+    // }
 }
