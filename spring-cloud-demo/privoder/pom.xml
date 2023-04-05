@@ -70,9 +70,24 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.rocketmq</groupId>
-            <artifactId>rocketmq-spring-boot-starter</artifactId>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-transport-simple-http</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+
+        <!--<dependency>-->
+        <!--    <groupId>org.apache.rocketmq</groupId>-->
+        <!--    <artifactId>rocketmq-spring-boot-starter</artifactId>-->
+        <!--</dependency>-->
 
         <!--配置文件-->
         <!--<dependency>-->
@@ -83,11 +98,11 @@
 
         <!-- https://mvnrepository.com/artifact/com.alibaba.fastjson2/fastjson2 -->
         <!--RocketMQ 必须引入这个依赖-->
-        <dependency>
-            <groupId>com.alibaba.fastjson2</groupId>
-            <artifactId>fastjson2</artifactId>
-            <version>2.0.24</version>
-        </dependency>
+        <!--<dependency>-->
+        <!--    <groupId>com.alibaba.fastjson2</groupId>-->
+        <!--    <artifactId>fastjson2</artifactId>-->
+        <!--    <version>2.0.24</version>-->
+        <!--</dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
         <dependency>

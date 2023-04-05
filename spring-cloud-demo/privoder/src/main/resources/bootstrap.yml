@@ -13,3 +13,7 @@ spring:
         username: nacos
         password: nacos
         network-interface:
+    sentinel:
+      transport:
+        dashboard: localhost:9527
+      web-context-unify: false

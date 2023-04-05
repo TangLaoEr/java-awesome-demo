@@ -1,8 +1,10 @@
 package cn.tanglaoer.demo.config;
 
 import cn.tanglaoer.demo.feign.UserFeignService;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.support.WebClientAdapter;
 import org.springframework.web.service.invoker.HttpServiceProxyFactory;
@@ -25,5 +27,12 @@ public class FeignConfig {
         HttpServiceProxyFactory httpServiceProxyFactory = HttpServiceProxyFactory.builder(WebClientAdapter.forClient(webClient)).build();
         UserFeignService client = httpServiceProxyFactory.createClient(UserFeignService.class);
         return client;
+    }
+
+    @LoadBalanced
+    @Bean
+    public RestTemplate restTemplate() {
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate;
     }
 }
